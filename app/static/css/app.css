@@ -1,3 +1,42 @@
 body {
     padding-top: 5rem;
 }
+
+h1{
+    border-bottom: 1px solid #bebebe;
+    padding-bottom: 0.5em;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 30%;
+}
+
+.form-label{
+    font-weight: bold;
+}
+
+.btn{
+    width: 40%;
+}
+
+.text-danger{
+    font-weight: bold;
+}
+
+.flashes{
+    text-align: center;
+}
+
+.message{
+    width: 30%;
+    font-size: 1.3em;
+    font-weight: bold;
+    background: #39a0cf;
+    list-style: none;
+    padding: 0.2em;
+    color: #fff;
+    margin: 0 auto;
+}

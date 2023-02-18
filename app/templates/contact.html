@@ -1,0 +1,49 @@
+
+
+{% extends "base.html" %}
+
+{% block main %}
+<h1>Contact Form</h1>
+<p>Fill in this form to contact the site owners.</p>
+<form method="POST" action="{{ url_for('contact') }}">
+    {{ form.csrf_token }}
+
+    <div class="form-group">
+      {{ form.name.label(class_="form-label") }}<span class="text-danger"> (Required)</span>
+      <p>Please enter your full name </p>
+      {{ form.name(size=20, class_='form-control') }}
+      {% for error in form.name.errors %}
+        <span class="help-block">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="form-group">
+      {{ form.email.label(class_="form-label") }}<span class="text-danger"> (Required)</span>
+      <p>Please enter your e-mail address</p>
+      {{ form.email(size=20, class_="form-control")}}
+      {% for error in form.email.errors %}
+        <span class="help-block">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="form-group">
+      {{ form.subject.label(class_="form-label") }}<span class="text-danger"> (Required)</span>
+      <p>Please enter the subject of your message.</p>
+      {{ form.subject(size=20, class_='form-control') }}
+      {% for error in form.subject.errors %}
+        <span class="help-block">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="form-group">
+      {{ form.message.label(class_="form-label") }}<span class="text-danger"> (Required)</span>
+      <p>Please enter the message you would like to send.</p>
+      {{ form.message(rows=5, class_='form-control') }}
+      {% for error in form.message.errors %}
+        <span class="help-block">{{ error }}</span>
+      {% endfor %}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Send</button>
+
+{% endblock %}
